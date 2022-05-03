@@ -4,15 +4,18 @@ import data from '../data'
 
 function Content() {
     const dataElements = data.map(experience => {
-        return <Card 
-                    key={experience.id}
-                    img={experience.coverImg} 
-                    rating={experience.stats.rating}
-                    reviewCount={experience.stats.reviewCount}
-                    location={experience.location}
-                    title={experience.title}
-                    price={experience.price}
-                /> 
+        return (
+            <Card 
+                key={experience.id}
+                img={experience.coverImg} 
+                rating={experience.stats.rating}
+                reviewCount={experience.stats.reviewCount}
+                location={experience.location}
+                title={experience.title}
+                price={experience.price}
+                openSpots={experience.openSpots}
+            /> 
+        )
     })
 
     return (
