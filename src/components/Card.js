@@ -2,24 +2,24 @@ import starImage from '../images/star.png';
 
 function Card(props) {
     let badgeText
-    if (props.openSpots === 0) {
+    if (props.experience.openSpots === 0) {
         badgeText = "SOLD OUT"
-    } else if (props.location === "Online") {
+    } else if (props.experience.location === "Online") {
         badgeText = "ONLINE"
     }
 
     return (
         <div className='card'>
             {badgeText && <div className='card-badge'>{badgeText}</div>}
-            <img src={require(`../images/${props.img}`)} alt={props.img} className='card-img' />
+            <img src={require(`../images/${props.experience.coverImg}`)} alt={props.experience.coverImg} className='card-img' />
             <div className='card-stats'>
                 <img src={starImage} alt='Star' className='star-img' />
-                <span>{props.rating}</span>
-                <span className='gray'>({props.reviewCount}) • </span>
-                <span className='gray'>{props.location}</span>
+                <span>{props.experience.stats.rating}</span>
+                <span className='gray'>({props.experience.stats.reviewCount}) • </span>
+                <span className='gray'>{props.experience.location}</span>
             </div>
-            <p>{props.title}</p>
-            <p><span className='bold'>From ${props.price}</span> / person</p>
+            <p>{props.experience.title}</p>
+            <p><span className='bold'>From ${props.experience.price}</span> / person</p>
         </div>
     )
 }

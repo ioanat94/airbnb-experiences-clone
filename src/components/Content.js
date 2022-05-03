@@ -7,13 +7,7 @@ function Content() {
         return (
             <Card 
                 key={experience.id}
-                img={experience.coverImg} 
-                rating={experience.stats.rating}
-                reviewCount={experience.stats.reviewCount}
-                location={experience.location}
-                title={experience.title}
-                price={experience.price}
-                openSpots={experience.openSpots}
+                experience={experience}
             /> 
         )
     })
